@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slider Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .slider-container {
+      width: 300px;
+      margin: auto;
+    }
+
+    input[type="range"] {
+      width: 100%;
+    }
+
+    .output {
+      font-size: 20px;
+      margin-top: 10px;
+      color: blue;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Slider Example</h2>
+
+  <div class="slider-container">
+    <input type="range" id="slider" min="0" max="100" value="50">
+    <div class="output">Value: <span id="value">50</span></div>
+  </div>
+
+  <script>
+    const slider = document.getElementById("slider");
+    const value = document.getElementById("value");
+
+    slider.addEventListener("input", function() {
+      value.textContent = slider.value;
+    });
+  </script>
+
+</body>
+</html>
