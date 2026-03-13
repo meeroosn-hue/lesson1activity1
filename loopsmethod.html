@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Methods and Loops Project</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+    padding:30px;
+}
+h1{
+    color:#333;
+}
+.box{
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+button{
+    padding:10px 20px;
+    margin-top:10px;
+    font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h1>JavaScript Methods and Loops Project</h1>
+
+<button onclick="runProject()">Generate Output</button>
+
+<h3>Output:</h3>
+<div id="output"></div>
+
+</div>
+
+<script>
+
+
+// Method to print random numbers using loop
+function printRandomNumbers(){
+    let result = "<b>Random Numbers:</b><br>";
+
+    for(let i=1;i<=5;i++){
+        let num = Math.random()*100;
+        result += "Random Number "+i+": "+num+"<br>";
+    }
+return result;
+}
+
+// Method to show current date
+function showCurrentDate(){
+    let today = new Date();
+    return "<br><b>Current Date:</b> "+today+"<br>";
+}
+
+// Method to show rounded random number
+function roundedRandom(){
+    let num = Math.random()*100;
+    let rounded = Math.round(num);
+
+    return "<br><b>Rounded Random Number:</b> "+rounded+"<br>";
+}
+
+// Main method
+function runProject(){
+
+    let output = "";
+
+    output += printRandomNumbers();
+    output += showCurrentDate();
+    output += roundedRandom();
+
+    document.getElementById("output").innerHTML = output;
+
+}
+
+</script>
+
+</body>
+</html>
+What happens when you open it
