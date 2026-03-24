@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Arguments & Trigonometry</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Project</h1>
+    <h2>Sum of Arguments & Trigonometric Values</h2>
+    <button onclick="calculateSum()">Calculate Sum</button>
+    <button onclick="showTrig()">Show Trigonometry</button>
+    <div id="output"></div>
+    <script>
+        function sumAll(...numbers) {
+            let total = 0;
+            for (let num of numbers) {
+                total += num;
+            }
+            return total;
+        }
+        function calculateSum() {
+            let result = sumAll(10, 20, 30, 40);
+            document.getElementById("output").innerText =
+                "Sum of numbers (10, 20, 30, 40) = " + result;
+        }
+        function toRadians(degrees) {
+            return degrees * (Math.PI / 180);
+        }
+        function getTrigValues(angle) {
+            let rad = toRadians(angle);
+            return "Angle: " + angle + "°\n" +
+                   "Sin: " + Math.sin(rad).toFixed(3) + "\n" +
+                   "Cos: " + Math.cos(rad).toFixed(3) + "\n" +
+                   "Tan: " + Math.tan(rad).toFixed(3) + "\n\n";
+        }
+        function showTrig() {
+            let angles = [0, 30, 45, 60, 90];
+            let output = "";
+            for (let angle of angles) {
+                output += getTrigValues(angle);
+            }
+            document.getElementById("output").innerText = output;
+        }
+    </script>
+</body>
+</html>
